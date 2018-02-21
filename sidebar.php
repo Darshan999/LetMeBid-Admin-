@@ -17,13 +17,10 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-<<<<<<< HEAD
+
                           <li><a class="" href="user_approve.php">Users</a></li>                          
                           <li><a class="" href="product_approve.php">Products</a></li>
-=======
-                          <li><a class="" href="#">Users</a></li>                          
-                          <li><a class="" href="#">Products</a></li>
->>>>>>> 3b00d37b86842f0f27c44e5c0ce0ad0f814c31a3
+
                       </ul>
                   </li>       
                   

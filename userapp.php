@@ -22,9 +22,16 @@
                                 
                                 $res=$obj->userapprove($user_email_id,$user_first_name,$user_last_name,$user_contact_no,$user_photo,$user_password,$user_type,$user_aadhar_card_number,$user_address,$fk_city_id,$fk_state_id);
                             }
+                            if($res1==1)
+        {
                                  echo '<script langauge="javascript">;
                                     alert("Student approved sucessfully");
                                     window.location.href="user_approve.php";
                                     </script>';
+                                }
+                                else
+        {
+            echo '<script>alert("Not updated");</script>';
+        }
 
                             ?>

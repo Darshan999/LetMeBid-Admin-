@@ -6,10 +6,16 @@
                                 $obj=new database();
                                 
                                 $res=$obj->productapprove($product_id);
-                            
+                            if($res1==1)
+                            {
+        
                                  echo '<script langauge="javascript">;
                                     alert("Product approved sucessfully");
                                     window.location.href="product_approve.php";
                                     </script>';
-
+}
+else
+{
+            echo '<script>alert("Not updated");</script>';
+        }
                             ?>

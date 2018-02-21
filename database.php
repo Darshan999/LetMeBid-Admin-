@@ -57,12 +57,15 @@ class database
 		return $res;
 		database::disconnect();
 	}
-<<<<<<< HEAD
+
 public function userdetail($u_email_id)
 	{
 		$con=database::connect();
 		$res=mysql_query("select * from user_tbl where user_email_id='$u_email_id'",$con);
-=======
+		return $res;
+		database::disconnect();
+	}
+
 	public function approveproducts()
 	{
 
@@ -93,43 +96,45 @@ public function userdetail($u_email_id)
 	{
 		$con=database::connect();
 		$res=mysql_query("select * from user_tbl where user_email_id='$user_email_id'",$con);
->>>>>>> 3b00d37b86842f0f27c44e5c0ce0ad0f814c31a3
+
 		//$cnt=mysql_num_rows($res);
 		return $res;
 		database::disconnect();
 	}
-<<<<<<< HEAD
+
 	public function userdetail1($user_id)
 	{
 		$con=database::connect();
 		$res=mysql_query("select  * from user_tbl where user_id='$user_id'",$con);
-=======
+		return $res;
+		database::disconnect();
+	}
 	public function categorydisplay()
 	{
 		$con=database::connect();
 		$res=mysql_query("select * from category_tbl ",$con);
->>>>>>> 3b00d37b86842f0f27c44e5c0ce0ad0f814c31a3
+
 		//$cnt=mysql_num_rows($res);
 		return $res;
 		database::disconnect();
 	}
-<<<<<<< HEAD
+
 	public function userdetail2()
 	{
 		$con=database::connect();
 		$res=mysql_query("select  * from user_tbl where user_type=1",$con);
-=======
+		return $res;
+		database::disconnect();
+	}
 	public function categorydisplaybyid($cat_id)
 	{
 		$con=database::connect();
 		$res=mysql_query("select * from category_tbl where cat_id=$cat_id ",$con);
->>>>>>> 3b00d37b86842f0f27c44e5c0ce0ad0f814c31a3
+
 		//$cnt=mysql_num_rows($res);
 		return $res;
 		database::disconnect();
 	}
-<<<<<<< HEAD
-=======
 	public function insertcategory($cat_name)
 	{
 		$con=database::connect();
@@ -161,7 +166,7 @@ public function userdetail($u_email_id)
 		//echo $q;
 		return $res;
 	}	
->>>>>>> 3b00d37b86842f0f27c44e5c0ce0ad0f814c31a3
+
 
 	public function usermuldel($u_email_id)
 	{

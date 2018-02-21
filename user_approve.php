@@ -147,7 +147,7 @@
     <tbody>
       <?php
 
-         include'database.php';        
+                
           $obj=new database();
           $res=$obj->userdisplay();
           
