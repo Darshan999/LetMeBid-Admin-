@@ -17,8 +17,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="studentapprove.php">Users</a></li>                          
-                          <li><a class="" href="blogapprove.php">Products</a></li>
+                          <li><a class="" href="user_approve.php">Users</a></li>                          
+                          <li><a class="" href="product_approve.php">Products</a></li>
                       </ul>
                   </li>       
                   
@@ -40,8 +40,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="owner.php">Owner</a></li>                          
-                          <li><a class="" href="expert.php">Users</a></li>
+                          <li><a class="" href="user_dis.php">Owner</a></li>                          
+                          <li><a class="" href="user.php">Users</a></li>
 
                       </ul>
                   </li>       
