@@ -89,7 +89,7 @@
 			</div>
               
             <?php 
-          require 'database.php';
+          
 					$obj=new database();
 					$res=$obj->getalluser();
 					$count=mysql_num_rows($res);

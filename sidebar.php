@@ -17,8 +17,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="studentapprove.php">Users</a></li>                          
-                          <li><a class="" href="blogapprove.php">Products</a></li>
+                          <li><a class="" href="#">Users</a></li>                          
+                          <li><a class="" href="#">Products</a></li>
                       </ul>
                   </li>       
                   
@@ -29,8 +29,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="studentapprove.php">Users</a></li>                          
-                          <li><a class="" href="blogapprove.php">Products</a></li>
+                          <li><a class="" href="#">Users</a></li>                          
+                          <li><a class="" href="#">Products</a></li>
                       </ul>
                   </li> 
                    <li class="sub-menu">
@@ -53,7 +53,7 @@
                   </li>
                  
                   <li>
-                      <a class="" href="subject.php">
+                      <a class="" href="category.php">
                           <i class="fa fa-align-justify"></i>
                           <span>Category</span> 
                       </a>
@@ -80,79 +80,6 @@
                       </a>
                   </li>
 
-                  <li>
-                      <a class="" href="blogs.php">
-                          <i class="icon_document_alt"></i>
-                          <span>Blogs</span>
-                      </a>
-                  </li>
-
-
-                  <li>
-                      <a class="" href="news.php">
-                          <i class="icon_desktop"></i>
-                          <span>News</span>
-                      </a>
-                  </li>
-
-                  <li>
-                      <a class="" href="event.php">
-                          <i class="icon_calendar"></i>
-                          <span>Events</span>
-                      </a>
-                  </li>
-
-
-                  <li>
-                      <a class="" href="jointevent.php">
-                          <i class="fa fa-calendar"></i>
-                          <span>Join Event </span>
-                      </a>
-                  </li>
-
-                  <li>
-                      <a class="" href="groups.php">
-                          <i class="fa fa-users"></i>
-                          <span>Groups</span>
-                      </a>
-                  </li>
-
-                  <li>
-                      <a class="" href="company.php">
-                          <i class="fa fa-building-o"></i>
-                          <span>Company</span>
-                      </a>
-                  </li>
-
-
-                    <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="fa fa-comment"></i>
-                          <span>Comments</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="blogcomment.php">Blog</a></li>                          
-                          <li><a class="" href="videocomment.php">Video</a></li>
-
-                      </ul>
-                  </li> 
-
-				         <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="fa fa-check"></i>
-                          <span>Needs To Approve</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="studentapprove.php">Users</a></li>                          
-                          <li><a class="" href="blogapprove.php">Blogs</a></li>
-
-                          <li><a class="" href="questionapprove.php">Questions</a></li>
-
-                          <li><a class="" href="notesapprove.php">Notes</a></li>
-                      </ul>
-                  </li>       
                   
               </ul>
               <!-- sidebar menu end-->

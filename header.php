@@ -1,6 +1,3 @@
-<?php
-    $user_id=1;
-?>
 <header class="header dark-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
@@ -63,70 +60,121 @@
                     <!-- task notificatoin end -->
                     <!-- inbox notificatoin start-->
                     <!-- Approve Products -->
+                    
+                    <?php
+                     
+                     require 'database.php';
+                     $obj=new database();
+                     $res=$obj->approveproducts();
+                     $res1=$obj->productbylimit();
+                     $cnt=mysql_num_rows($res1);
+
+                    echo '
                 
                     <li id="mail_notificatoin_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-envelope-l"></i>
-                            <span class="badge bg-important">10</span>
+                            <span class="badge bg-important">'.$cnt.'</span>
                         </a>
                         <ul class="dropdown-menu extended inbox">
                             <div class="notify-arrow notify-arrow-blue"></div>
                             <li>
-                                <p class="blue">You have 10 new messages</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="image/p1.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Tv</span>
-                                    <span class="time"></span>
-                                    <span class="message"></span>
-                                    </span>
-                                    
-                                </a>
-                            </li>
+                                <p class="blue">You have '.$cnt.' new messages</p>
+                            </li>';
+                            while($row=mysql_fetch_assoc($res1))
+                            {
+
+                            $sortcontent=substr($row["product_name"],0,20)."...";
+
+                            echo'
+
+                            
+                                <li>
+                                    <a href="#">
+                                        <span class="photo"><img alt="avatar" src="image/'.$row["product_photo"].'"></span>
+                                        <span class="subject">
+                                        <span class="from">'.$sortcontent.'</span>
+                                        <span class="time"></span>
+                                        <span class="message"></span>
+                                        </span>
+                                        
+                                    </a>
+                                </li>';
+                            }
+                            echo '
                             <li>
                                 <a href="#">See all messages</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>';
+                    ?>
                     <!-- inbox notificatoin end -->
                     <!-- alert notification start-->
                     <!-- Approve Users -->
-                    <li id="alert_notificatoin_bar" class="dropdown">
+                    <?php
+
+                   
+                    $obj=new database();
+                    $res=$obj->approveusers();
+                    $cnt=mysql_num_rows($res);
+                     
+                    echo '
+                        <li id="alert_notificatoin_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
                             <i class="icon-bell-l"></i>
-                            <span class="badge bg-important">5</span>
+                            <span class="badge bg-important">'.$cnt.'</span>
                         </a>
                         <ul class="dropdown-menu extended notification">
                             <div class="notify-arrow notify-arrow-blue"></div>
                             <li>
-                                <p class="blue">You have 5 new notifications</p>
-                            </li>
+                                <p class="blue">You have '.$cnt.' new notifications</p>
+                            </li>';
+                            
+                    
+                    while($row=mysql_fetch_assoc($res))
+                    {
+                        
+                       // $time=date("i");
+                        $user_first_name=$row["user_first_name"];
+                        echo '
                             <li>
-                                <a href="studentapprove.php">
-                                    <img src="image/p2.jpg" height="40px" width="40px">&nbsp;
+                                <a href="#">
+                                    <img src="image/'.$row["user_photo"].'" height="40px" width="40px">&nbsp;
                                     <span class="label label-primary"></span> 
-                                    
+                                    '.$row["user_first_name"].'
                                   
                                 </a>
-                            </li>
+                            </li>';
+                     
+                     
+                    }
+                    echo '
                             <li>
                                 <a href="#">See all notifications</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>';
+                    ?>
                     <!-- alert notification end-->
                     <!-- user login dropdown start-->
                     <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <?php
+                       $obj=new database();
+                       $res=$obj->userdisplaybyid($user_email_id);
+                       while($row=mysql_fetch_assoc($res))
+                       {
+                            $user_first_name=$row["user_first_name"];
+                            $user_photo="image/".$row["user_photo"];
+                       }
+                    echo '<a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="image/p3.jpg" height="40px" width="40px">
+                                <img alt="" src="'.$user_photo.'" height="40px" width="40px">
                             </span>
-                            <span class="username">Rutvi</span>
+                            <span class="username">'.$user_first_name.'</span>
                             <b class="caret"></b>
-                        </a>
+                        </a>';
+                    ?>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
