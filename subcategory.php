@@ -1,7 +1,8 @@
 <?php
    session_start();
 ?>
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -11,7 +12,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Users Details </title>
+    <title>Sub-Categories Details </title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,16 +42,17 @@
 	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/EduFocus.css">
 
+
   <link href="pagination/demo/Content/bootstrap.min.css" rel="stylesheet">
     <link href="pagination/demo/css/jquery.dataTables_themeroller.css" rel="stylesheet">
-    
+
  
      <script type="text/javascript">
     function del()
     {
       return confirm("Are you sure you wanna delete this post?");
     }
-    </script> 
+    </script>
 
    
     <!-- =======================================================
@@ -65,21 +67,19 @@
   <!-- container section start -->
   <section id="container" class="">
      
-
+      
       
       <!--header end -->
       <?php
 
-              $user_email_id=$_SESSION["user_email_id"];
-          include'./header.php';
+        $user_email_id=$_SESSION["user_email_id"];
+        include'./header.php';
 
       ?>
 
-    
-
       <!--sidebar start-->
       <?php
-  include'./sidebar.php';
+        include'./sidebar.php';
       ?>
 
       <?php
@@ -88,97 +88,81 @@
        if(isset($_POST["delete"]))
        {
          
-        
+       // include 'database.php'; 
         $obj=new database(); 
         @@$idArr = $_POST['chk'];
-        if (empty($_POST["chk"])) {
+
+         if (empty($_POST["chk"])) {
                           echo '<script language="javascript">;
-                        alert("Please Selece Check Box");window.location.href="student.php";
+                        alert("Please Selece Check Box");window.location.href="subcategory.php";
                         </script>';
 
-          }
-          else
-         {
+        }
+        else
+        {
                         
-         foreach($idArr as $user_email_id)
+         foreach($idArr as $cat_id)
          {
-            $res=$obj->usermuldel($user_email_id);
+            $res=$obj->categorymuldel($cat_id);
         
          }
-
-
+        
          if($res==1){
-           header('location:user_approve.php');
+           header('location:category.php');
          }
-       }
+        }
        }
        
  ?>
+     
       <section id="main-content">
           <section class="wrapper">
 
   <div class="container-fluid">
     <div class="row">
 
-    <center><h1 class="text">Users Details</h1></center>
-    <form action="" method="post">
+    <center><h1 class="text">Sub-Category Details</h1></center>
+    <form method="post" action="">
+
     <div class="panel-body">
-
-    
-
-
     <button class="btn btn-danger" type="submit" name="delete" onClick="return del()"><span>Delete All</span></button>
-    <a href="adduser.php" class="btn btn-primary" ><span class="glyphicon glyphicon-plus" arial-hidden="true"></span></a>
+    <a href="addcategory.php" class="btn btn-primary"><span class="glyphicon glyphicon-plus" arial-hidden="true"></span></a>
    
     </div>
-    
 <table class="table table-striped table-advance table-hover" id="dataTable">
     <thead>
-      
+      <tr>
       <th>Select</th>
-      <th><i class="icon_mail_alt"></i> Email_Id</th>
-      <th><i class="icon_profile"></i> Name</th>
-      <th><i class="fa fa-picture-o"></i> Photo</th>
-      <th><i class="icon_mobile"></i> Mobile_no</th>
+       
+      <th><i class="fa fa-user"></i> Name</th>
+      <th><i class="icon_cogs"></i> Action</th>
       
-      
-      
+      </tr>
     </thead>
     <tbody>
       <?php
 
-         
-
+          // include 'database.php';        
           $obj=new database();
-          
-         
+          $res=$obj->categorydisplay();
 
-
-          
-          $res1=$obj->userdetail2();
-          while($row=mysql_fetch_assoc($res1))
+          while($row=mysql_fetch_assoc($res))
           {
-            $user_email_id=$row["user_email_id"];
+            $cat_id=$row["cat_id"];
 
-            
         
               echo'<tr>';
-              ?>
-              
+            ?>
+            <td><input type="checkbox" name="chk[]" value="<?php echo $row["cat_id"]; ?>" /></td>
 
-              <td><input type="checkbox" name="chk[]" value="<?php echo $row["user_email_id"]; ?>" /></td>
-              <?php 
-              echo '
-              <td>'.$row["user_email_id"].'</td>
-              <td>'.$row["user_first_name"].'</td>
-   
-              <td><img src="../'.$row["user_photo"].'" class="imgdisplay"/></td>
-              <td>'.$row["user_contact_no"].'</td>
+          <?php
+              echo '<td>'.$row["cat_name"].'</td>
+              
+              <td><a href="categoryedit.php?cat_id='.$cat_id.'" class="btn btn-success"><span class="glyphicon glyphicon-pencil" arial-hidden="true"></span></a>
+              <a href="categoryaction.php?cat_id='.$cat_id.'" class="btn btn-danger" onClick="return del()" ><span class="glyphicon glyphicon-trash" arial-hidden="true"></span></a></td>
               </tr>';
         
-      
-          }
-          
+      }
       ?>
     </tbody>
     </tr>
@@ -237,13 +221,9 @@
   <script src="js/charts.js"></script>
   <script src="js/jquery.slimscroll.min.js"></script>
 
-      <!-- custom form validation script for this page-->
-    <script src="js/form-validation-script.js"></script>
 
   <script src="pagination/demo/Scripts/bootstrap.min.js"></script>
   <script src='pagination/demo/js/jquery.dataTables.min.js'></script>
-
-
   <script>
 
       //knob
@@ -296,7 +276,7 @@
             $('#dataTable').dataTable({
                // "bJQueryUI": true,
                 "sPaginationType": "full_numbers",
-				//"pageLength": 1
+        //"pageLength": 1
             });
 
             $('#chk-all').click(function () {
@@ -314,6 +294,9 @@
                 }
             });
         });
+
+      
+      
 
   </script>
 

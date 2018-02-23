@@ -18,8 +18,8 @@
                       </a>
                       <ul class="sub">
 
-                          <li><a class="" href="user_approve.php">Users</a></li>                          
-                          <li><a class="" href="product_approve.php">Products</a></li>
+                          <li><a class="" href="#">Users</a></li>                          
+                          <li><a class="" href="#">Products</a></li>
 
                       </ul>
                   </li>       
@@ -42,13 +42,13 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="user_dis.php">Owner</a></li>                          
-                          <li><a class="" href="user.php">Users</a></li>
+                          <li><a class="" href="#">Owner</a></li>                          
+                          <li><a class="" href="#">Users</a></li>
 
                       </ul>
                   </li>       
                   <li>
-                      <a class="" href="question.php">
+                      <a class="" href="#">
                           <i class="fab fa-product-hunt"></i>
                           <span>Products</span>
                       </a>
@@ -62,21 +62,21 @@
                   </li>
 
                   <li>
-                      <a class="" href="course.php">
+                      <a class="" href="subcategory.php">
                           <i class="fa fa-book fa-fw"></i>
                           <span>Sub-Category</span>
                       </a>
                   </li>
 
                   <li>
-                      <a class="" href="notes.php">
+                      <a class="" href="#">
                           <i class="fa fa-file-pdf-o"></i>
                           <span>Current Bid</span>
                       </a>
                   </li>
 
                   <li>
-                      <a class="" href="video.php">
+                      <a class="" href="#">
                           <i class="fa fa-video-camera"></i>
                           <span>Sold Product</span>
                       </a>

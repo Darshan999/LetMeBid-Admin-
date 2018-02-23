@@ -1,15 +1,15 @@
  <?php
 class database
 {
-	private static $host='localhost';
-	private static $uname='root';
-	private static $pwd='';
+	private static $host='edufocus.db.9462939.hostedresource.com';
+	private static $uname='edufocus';
+	private static $pwd='Ddrr@9898';
 	private static $con=NULL;
 	//static uses one connection throughout whole programme. Hence it is best method to use.
 	public static function connect()
 	{
 		self::$con=mysql_connect(self::$host,self::$uname,self::$pwd);
-		mysql_select_db('letmebid',self::$con);
+		mysql_select_db('edufocus',self::$con);
 		return self::$con;
 	}
 	public static function disconnect()
